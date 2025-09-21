@@ -135,12 +135,35 @@ int main()
     
 
 
-     
+    // // verbose pointer safety
+    // int* pointer {}; // initialized to nullptr
+    
+    // if(!(pointer == nullptr)){
+    //     cout << "Pointer points to a VALID address" << endl;
+    // }else {
+    //     cout << "Pointer points to a INVALID address" << endl;
+        
+    // }
+    
+    // // compact pointer safety can be written 
+    // int* pointer {};
+    // pointer = new int {24};
+    // if(pointer){
+    //     cout << "Pointer points to a VALID address " << pointer << endl;
+    //     cout << "Pointer points to a VALID address " << *pointer << endl;
+    // }else{
+    //     cout << "Pointer points to a INVALID address" << endl;
+
+    // }
+
+    // int* pointer1 {};// initialized to nullptr
+    // delete pointer1;
+    // pointer1 = nullptr;// their is no need to do this if pointer is already a nullptr
 
 
+    
 
-
-
+    
 
 
 
