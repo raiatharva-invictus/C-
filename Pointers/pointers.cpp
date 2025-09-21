@@ -161,13 +161,65 @@ int main()
     // pointer1 = nullptr;// their is no need to do this if pointer is already a nullptr
 
 
+//////////////////////////////////////////////////////
+
+    ///Memory Leaks ///
+
+    // case 1
+    // int* point {new int {24}}; // dynamically allocated memory at address : a
+
+    // // should have deletd and reset here itself
+
+    // int number{2}; // is present at adress : b
+    // point = &number; // now the pointer point points to address : b and our program still uses the address : a but lost access to it // this is a memory leak
     
+    // // case 2 : double allocation
+    // int* point {new int{24}};
+    // // should have used it and then delete & reset it here itself. 
+    // point = new int{7}; // memory containing int{24} leaked
 
+
+    // // case 3 : pointer is present in a local scope
+    // {
+    //     int* pointer {new int {24}};
+    //     // after this scope the above pointer will die but allocated memory wont so this is also a memory leak
+    // }
+    // // memory leaked that contained int{24}
+
+
+    ///////////////////////////////////
+
+    /// Dynamic Arrays ///
+
+    // // dynamic array allocation
+    // size_t size{10};
+    // // int* point {new int[size]}; // this array point will contain all garbage values
+    // // // but if we use nothrow for new
+    // // int* pointer {new(nothrow) int[size]{}};// this will intialize all the values to 0
     
+    // int* pointer1 {new int[size]{1,2,3,4,5,6,7,8,9,10}};// this will intialize all the other remaining values to 0
+    // for(int el : pointer1){
+    //     cout << "Value in array at index"<< " is " << el << endl;
+    // }
+
+    // we can also check for nullptr safety here
+    // if(pointer){
+    //     // do things with the array
+    // }
+
+    // /// we should also like we did in pointers free the memory and reset it do point to nullptr to be a better c++ developing practice
+    // int* pointer {new int[10]};
+    //  // do things with the array and then 
+
+    // delete[] pointer; // array version of freeing memory is delete[].
+    // pointer = nullptr;
 
 
+     /* imp points:
+        range based for loop ie -> (for (auto e : array){}) & std::size(array0 doesnt work with dynamic arrays like it worked for static arrays. static array lives on the stack while dynamic arrays live on the heap.
+     */
 
-    
+
 
 
 }
