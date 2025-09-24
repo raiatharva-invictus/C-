@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int sum(int a, int b)
+{
+    return a + b;
+}
+// void sum(int a, int b)
+// { // error: functions that differ only in their return type cannot be overloaded
+//     int c = a + b;
+// }
+// int sum(int a, int b, int c){ // this will overload the above function
+//         return a + b +  c;
+//     }
+
+////
+// if i take and define a function as just below the argument are local to the function and they dont affect the original argument passed since these arguments in the function is copy of it
+
+int subtract(int a, int b)
+{
+    ++a; // this increment is done locally on the copy of int a it wont apppear in the original value 
+    return a - b;
+}
+
+int main()
+{
+    /*
+    syntax:
+    return_type function_name (param1, param2, ....){
+        // body
+
+        return return_type;
+    }
+    */
+
+    // be careful about implicit conversion when using functions like you gave double as parameter and it gets implicitly converted to integer
+
+    // all other things that are taguth are similar to that of java and c things how a function is written void type and etc, main thing is
+    // a function must always be written above the main function
+
+    // example of c++ copy of argument
+    // int a{8};
+    // int b{4};
+    // cout << subtract(a, b) << endl;
+    // cout << a << " " << b << endl;
+}
