@@ -6,7 +6,7 @@ int sum (int a, int b); // declaration of the function
 
 int main()
 {
-// tweaking with the branches in git ie learning and main for seocnd time
+// tweaking with the branches in git ie learning and main for last time
 
 }
 
