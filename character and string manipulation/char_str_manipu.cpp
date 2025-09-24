@@ -146,8 +146,22 @@ int main()
     // cout << a << endl;
 
 //////////////////////////////////////////////////////////////////////////////////////////
-    /// std:string makes worjking with string very easy ///
-    
+    /// std:string makes wokring with string very easy ///
+    //ways to declare and initialize the string
+    string a; // empty string
+    string b {"Hello World"}; // initialization with a string literal
+    string c {b}; // initialization with existing string literal 
+    string d {"Hello World", 5}; //initialization using 5 character from hello from starting
+    string e(5, 'a'); // initialization with repeating character like here aaaaa(use parantheses only)
+    string f {"Hello world", 6 , 5}; // initialization using part of a string literal with start_pos and how much character to tak eusing the length after starting index
+    cout << a << endl;
+    cout << b << endl;
+    cout << c << endl;
+    cout << d << endl;
+    cout << e << endl;
+    cout << f << endl;
+
+
 
 
 }

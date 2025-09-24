@@ -1,11 +1,10 @@
-
 // double var {};
 
 // double add(double a, double b){
 //     return a+b;
 // }
 
-// struct Person { // wont give error in the main file
+// struct Person { // wont give error even if it is defined in the main file
 //     double mar;
 //     double per;
 // };
