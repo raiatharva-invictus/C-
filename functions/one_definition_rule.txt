@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+// odr : variables : definition and declaration
+double var{}; // this cannot be defined twice in the same scope in this file or other say test.cpp 
+
+// odr : functions 
+double add(double a, double b);
+
+//odr : classes
+struct Person { // if we define the same in another file here it wont show error but in the same file it will give error
+    double mar{};
+    double per{};
+};
+// struct Person {  // this will casue redfinition error
+//     double mar{};
+//     double per{};
+// };
+
+
+int main()
+{
+    // double result = add(20, 10);
+    // cout << result << endl;
+    // Person p;
+    // cout << "The marks of the person is " << p.mar << " and percentage is " << p.per << endl;
+
+
+}
+// the below will give linker error since this function is also defined in test.cpp file we have to comment out one of the definition in order for our function to work since right now it is not following one definition rule
+
+// double add( double a, double b){
+//     return a + b;
+// }
