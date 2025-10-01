@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+
+//Function Overloading based on parameters : order, number and types
+
+// example of type of parameters
+int mult(int a, int b){
+    return a*b;
+}
+
+// double mult(int a, int b){ // wont work since return type is not sufficient to differentiate it with above function
+//     return a*b;
+// }
+
+int mult(double b, double a){
+    return a*b;
+}
+
+// example of number of parameters
+
+int mult(int a, int b, int c){
+    return a*b*c;
+}
+
+// example of order of parameters
+
+int mult(int a, double b){
+    return a*b;
+}
+int mult(double a, int b){
+    return a*b;
+}
+
+int main()
+{ 
+    //Function overloading
+    int a {3} , b {3}, c {8};
+    double s {4.2}, g {3.3};
+    cout << mult(a, b) << endl;
+    cout << mult(a, b, c) << endl;
+    cout << mult(s, g) << endl;
+}

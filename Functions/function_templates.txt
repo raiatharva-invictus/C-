@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+// Syntax of template is :-
+template <typename T> T function_name(T a, T b){
+   // body
+}
+
+// template is not a real C++ function but a blueprint the real C++ fucntion is the instance created using it by the compiler
+// The parameter we are passing ie T should be of same datatype like int,int not double,int
+// we should be careful while passing pointer to the template parameters it can turn out ot be disaster
+
+template <typename T> T maximum(T a, T b){
+    return (a > b )? a : b;
+}
+
+int main() {
+   int a {3};
+   int b {5};
+
+   string c {"Hello"};
+   string d {"World"};
+
+    cout << maximum(a, b) << endl;
+    cout << maximum(c, d) << endl;
+    
+    return 0;
+}

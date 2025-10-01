@@ -1,43 +1,7 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-void max_str(const string a, const string b, string &out)
-{
-    out = (b > a) ? b : a;
-}
 
-int max(int a, int b, int &out)
-{
-    return out = (b > a) ? b : a;
-}
+int main() {
 
-double max2(double a, double b, double *out)
-{
-    return *out = (b > a) ? b : a;
-}
-
-int main()
-{
-    string a{"Hello"};
-    string b{"World"};
-    string out;
-    cout << out << endl;
-    max_str(a, b, out);
-    cout << out << endl;
-
-    int a1{24};
-    int b1{200};
-    int out1;
-    cout << out1 << endl;
-    max(a1, b1, out1);
-    cout << out1 << endl;
-
-    double a2{204};
-    double b2{2};
-    double out2;
-
-    cout << out2 << endl;
-    max2(a2, b2, &out2);
-    cout << out2 << endl;
 }
