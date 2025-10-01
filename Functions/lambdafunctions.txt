@@ -1,0 +1,111 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Syntax for lamda functions
+    /*
+    Lambda function signature
+    [capture list](parameters) -> return type{
+        // function body
+    }
+    */
+
+    // // we can also assign name to our lamda function
+    // auto func = [](){
+    //     cout << "Hello i am a lambda function " << endl;
+    // };
+    // func();
+
+    // we can also call the lamda function immediately after definition
+    // [](){
+    //     // fucntion body
+    // }();
+
+    // // passing parameters to the lamda function
+    // [](double a, double b){
+    //     cout << "The sum : " << a+b << endl;
+    // }(12.456, 3235.54007);
+
+    // // Lambda function that returns value
+    // auto result = [](double a, double b){
+    //     return (a+b);
+    // }(12.456, 3235.54007);
+    // cout << result << endl;
+
+    // // We can even directly print the function return value in the print statement ie cout << << endl;
+
+    // cout << [](double a, double b)
+    // {
+    //     return (a + b);
+    // }(12.456, 3235.54007)
+    // << endl;
+
+    // // We can even explicitly write the return type
+
+    // auto result = [](double a, double b) -> double
+    // {
+    //     return (a + b);
+    // }(12.4560006, 3235.58900078);
+    // cout << result << endl;
+
+    // /// capture by value/// : lets learn about capture of the lambda function
+
+    // int c{34};
+    // int v {45};
+    // auto result = [c,v](){ // here we have given variables in the capture list
+    //     cout << "The value of result is : " << c << endl;
+    // };
+
+    // example to understand how we can work with original variables via lamda function which takes copy of the value
+    /// capture by reference///
+    int c{34};
+    auto result = [&c]()
+    {
+        cout << "The value of result is : " << c << endl;
+    };
+
+    // for(size_t i = 0; i < 5 ; i++){
+    //     result(); // Thsi won't show the effect of incrementation on c since in the lamda the copy of c is present hence in when we call this it will give the copy of c which in its scope is not incrementing or say unrelated to original variable(both have differnet memory address)
+    //     cout << "This is done usign for loop : " << c << endl; // This will show the incremented value we are doing on variable c
+    //     ++c;
+    // }
+
+    // // example to understand how we can work with original variables via lamda function which takes copy of the value
+    // for(size_t i = 0; i < 5 ; i++){
+    //     result();
+    //     // cout << "This is done usign for loop : " << c << endl;
+    //     ++c;
+    // }
+
+    ////////////////
+    /// capture all in context ///
+
+    int a{34};
+    int y{3};
+    int h{343};
+    int n{134};
+    /// capture all by value syntax
+    auto lambda1 = [=]()
+    {
+        cout << a << " " << y << " " << n << " " << h << endl;
+    };
+    lambda1();
+    ++a;
+    ++h;
+    ++y;
+    ++n;
+    lambda1();
+
+    /// capture all by reference
+    auto lambda2 = [&]()
+    {
+        cout << a << " " << y << " " << n << " " << h << endl;
+    };
+    lambda2();
+    ++a;
+    ++h;
+    ++y;
+    ++n;
+    lambda2();
+}

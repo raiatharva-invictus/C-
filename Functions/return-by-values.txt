@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// int sum(int a, int b)
+// { // The copy of the value will be returned and stored to the main fucntions result variable both (sum & result) different addresses
+
+//     int sum = a + b;
+//     cout << &sum << endl;
+//     return sum;
+// }
+
+
+
+// Compiler sometimes optimizes to no return by value but return by reference
+string pr(string in1, string in2){
+    string result = in1 + in2;
+    cout << &result<< endl;
+    return result;
+}
+int main()
+{
+    // int a{3}, b{4};
+    // int result = sum(a, b);
+    // cout << result << " " << &result << endl;
+
+    //compiler optimization example to make it return by reference instead of return by value
+    string in1 {"Hello world"};
+    string in2 {"Hello world!"};
+    string result = pr(in1, in2);
+    cout << result << " " << &result << endl; // this will give the same address as that of result in the function this optimization was made by compiler itself
+}
