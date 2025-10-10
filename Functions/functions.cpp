@@ -1,149 +1,16 @@
-//// BUILT-IN CONCEPTS ////
-
-// #include <iostream>
-// #include <concepts>
-// using namespace std;
-
-// /// CONCEPTS ///
-// // syntax 1 
-// // template <typename T> requires std::integral<T> T add(T a, T b){
-// //     return a + b;
-// // }
-// // // syntax 1 (using type traits)
-// // template <typename T> requires std::is_integral_v<T> T add(T a, T b){ // using type traits
-// //     return a + b;
-// // }
-// // // syntax 2
-// // template <std::integral T> T add(T a, T b){ // using type traits
-// //     return a + b;
-// // }
-// // syntax 3
-// // below is also a function template since we are using std::integral auto makes it a abbreviated function template
-// // auto add (std::integral auto a, std::integral auto b){
-// //     return a+b;
-// // }
-// //syntax 4 
-// template <typename T> T add (T a, T b) requires std::integral <T>{
-//     return a + b;
-// }
-// int main() {
-//     /*
-//     double a {4};
-//     double b {56};
-//     auto c = add (a, b);
-//     wont work bcz concept applied on the function templates says that it will take only take integral values
-//     */
-
-//     //below code works 
-//    char a {24};
-//    char b {97};
-//    int c {24};
-//    int d {97};
-    
-//     cout << add(a,b) << endl; // example of auto function template // the auto will detect for char sum int type in this case it gave me 121 instead of y 
-//     cout << add(c,d) << endl;
-// }
-
-
-
-// //// User defined Concepts ////
-// #include <iostream>
-// #include <concepts>
-// using namespace std;
-
-// //below three are examples of how you can define your own template and implementation of these examples is also just below
-
-// template <typename T> 
-// concept MyIntegral = std::is_integral_v<T>; // interestingly this is the way we std::integral is also defined
-
-// template <typename T> 
-// concept Multipliable = requires(T a, T b){
-//     a * b; // Just make sure the syntax is valid
-// };
-
-// template <typename T>
-// concept Incrementable = requires (T a){
-//     a+=1;
-//     ++a;
-//     a++;
-// };
-
-// // using the MyIntegral concept below are few implementation
-
-// template <typename T> requires MyIntegral <T> T add(T a, T b){
-//     return a + b;
-// }
-// template <MyIntegral T>T add2(T a, T b){
-//     return a + b;
-// }
-// MyIntegral auto add3(MyIntegral auto a, MyIntegral auto b){ // adding MyIntegral concept at front means we want the concept to be applied to the return type too which might feel obvious but generally you know this ensures it
-//     return a + b;
-// }
-
-
-// int main() {
-//     int a {4};
-//     int b {97};
-//     /*
-//     this way is also going to work  
-//     char a {4};
-//     char b {97};
-//     */
-
-//     cout << add(a,b) << endl;
-//     cout << add2(a,b) << endl;
-//     cout << add3(a,b) << endl;
-
-// }
-
-
-//// zooming in on requires clause////
+/// Classes ///
 #include <iostream>
-#include <concepts>
-using namespace std;
+#define PI 3.14;
 
-// the require clause can take in four types of requirement among which three staring are focused : These are Simple requirements, Nested requirements, Compound requirements, Type requirements(advance concept).
+int main(){
 
-template <typename T> 
-concept MyIntegral = std::is_integral_v<T>; // interestingly this is the way 
-
-template <typename T> 
-concept Multipliable = requires(T a, T b){
-    a * b; // Just make sure the syntax is valid
+}
+class Cylinder {
+    public:
+        double base_radius {12.2};
+        double height {22};
+    public:
+        double volume(){
+            return PI * base_radius * base_radius * height;
+        }
 };
-
-template <typename T>
-concept Incrementable = requires (T a){
-    a+=1;
-    ++a;
-    a++;
-};
-
-// using the MyIntegral concept below are few implementation
-
-template <typename T> requires MyIntegral <T> T add(T a, T b){
-    return a + b;
-}
-template <MyIntegral T>T add2(T a, T b){
-    return a + b;
-}
-MyIntegral auto add3(MyIntegral auto a, MyIntegral auto b){ // adding MyIntegral concept at front means we want the concept to be applied to the return type too which might feel obvious but generally you know this ensures it
-    return a + b;
-}
-
-
-int main() {
-    int a {4};
-    int b {97};
-    /*
-    this way is also going to work  
-    char a {4};
-    char b {97};
-    */
-
-    cout << add(a,b) << endl;
-    cout << add2(a,b) << endl;
-    cout << add3(a,b) << endl;
-
-}
-
