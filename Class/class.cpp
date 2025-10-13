@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-#define PI 3.14159
+// #define PI 3.14159 //or we can use const double PI {3.14159};
+const double PI {3.14159};
 class Cylinder {
     public:
         double base_radius{2.4};
@@ -15,3 +16,5 @@ int main()
     Cylinder cylinder;
     cout <<"Vol of Cylinder having " << "Base_Radius : " << cylinder.base_radius << " and Height : " << cylinder.height << " is " <<  cylinder.volume() << endl;
 }   
+
+

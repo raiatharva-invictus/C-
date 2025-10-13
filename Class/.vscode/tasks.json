@@ -42,6 +42,21 @@
 			],
 			"group": "build",
 			"detail": "compiler: C:\\mingw64\\bin\\clang++.exe"
+		},
+		{
+				"label": "Git Push",
+				"type": "shell",
+				"command": "git add . ; git commit -m '${input:message}' ; git push",
+				"problemMatcher": [],
+				
+    	}
+		
+	],
+	"inputs": [
+		{
+		"id": "message",
+		"type": "promptString",
+		"description": "Enter commit message"
 		}
 	]
 }
