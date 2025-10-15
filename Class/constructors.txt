@@ -1,0 +1,45 @@
+// Topic : - constructors in c++
+
+/*
+IMP NOTES:
+1 Constructors is basically a special kind of method that is called when an instance of a class is created(ie object is created) , it has no return type it has same name as class name, can have parameters or not, usually used to initialize member variables of class
+2 their is a deafault is that is always invoke(in case you havent explicitly defined one ) when an object is created
+3 if you define your own constructor then the default constructor is not provided by compiler
+
+*/
+
+#include <iostream>
+using namespace std;
+// #define PI 3.14159 //or we can use const double PI {3.14159};
+const double PI {3.14159};
+class Cylinder {
+    public:
+        // this below are called member varibles if no access specifier is mentioned then by default it is private
+        double base_radius{2.4};
+        double height{5.0};
+    public :
+        Cylinder () = default; // this is default constructor we have to explicitly define it if we have defined our own constructor
+        Cylinder () {}; // this is also a default constructor
+        Cylinder(double radius, double height){
+            base_radius = radius;
+            height = height;
+        };
+        double volume(){    
+            return PI * base_radius  * base_radius * height ;
+        }
+    // other access modifiers include publc, private, protected    
+};
+int main()
+{
+    Cylinder cylinder1;
+    Cylinder cylinder2(3,6);
+    cout <<  "The volume of cylinder1 is : " << cylinder1.volume() << endl ;
+    cout << "The volume of cylinder2 is : " << cylinder2.volume()<< endl;
+}   
+
+
+
+
+
+
+

@@ -49,6 +49,13 @@
 				"command": "git add . ; git commit -m '${input:message}' ; git push",
 				"problemMatcher": [],
 				
+    	},
+		{
+				"label": "Run Compiled File",
+				"type": "shell",
+				"command": ".\\rooster.exe",
+				"problemMatcher": [],
+				
     	}
 		
 	],

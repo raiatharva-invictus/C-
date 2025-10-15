@@ -1,0 +1,35 @@
+// Topic : - using multiple files in c++
+// files used for this topic is cylinder.h, cylinder.cpp, constants.h
+
+/*
+IMP NOTES:
+1 we can instead of defining mutiple classes in a single file we can distribute the code and use it here via include : using header file 
+2 in header file we can only write prototype of the function and constructors and separate the implementation
+3 the name of header file and implementation file does not need to be same but it is better practice and some compilers are optimized this way to assume this convention(of same name of header and implementation file(cpp file that has the implementation of the fucntion prototyped in header file))
+*/
+
+#include <iostream>
+#include "constants.h"
+#include "constants.h"
+#include "cylinder.h"
+using namespace std;
+
+
+int main()
+{
+    Cylinder c;
+
+    c.setRadius(4);
+    c.setHeight(3);
+    cout << c.getRadius() << endl;
+    cout << c.volume() << endl;
+
+
+}   
+
+
+
+
+
+
+

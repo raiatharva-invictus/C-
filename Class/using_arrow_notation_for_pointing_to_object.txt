@@ -1,0 +1,48 @@
+// Topic : - arrow notation for obj pointer
+
+/*
+1 we can use pointers to manage stack object through pointers(store address), manage eap object through pointers
+2 tradtional syntax to dereference is pretty verbose and looks ugly ((*obj).<member>) so better way is using arrow notation (obj-><member>) and is much better and preffered
+*/
+
+#include <iostream>
+#include "cylinder.h"
+using namespace std;
+
+
+
+int main()
+{
+    
+    // we can manage stack objects through pointers
+    Cylinder c2;
+    Cylinder *c3 = &c2;
+    
+    (*c3).setRadius(2); 
+    (*c3).setHeight(2);
+    cout << (*c3).volume() << endl;
+    // we can manage heap objects too via the pointers 
+    
+    Cylinder* c1 = new Cylinder(10,20);
+    // this is traditional way and looks ugly    
+    (*c1).setRadius(2);
+    (*c1).setHeight(2);
+    cout << (*c1).volume() << endl;
+    
+    // this is better way and looks better and is arrow notation 
+    c1->setRadius(2);
+    c1->setHeight(2);
+    cout << c1->volume() << endl;
+
+
+    // remember to release the memory
+    delete c3;
+    delete c1; 
+}   
+
+
+
+
+
+
+

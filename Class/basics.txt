@@ -1,0 +1,40 @@
+/*
+IMP NOTES:
+
+1 class members can be either raw stack variables or pointers
+2 class members cannot be references since references must be initialized when declared but the property of members to be used unintialized is required
+3 while private members (variables and functions) cannot be accessed outside of the class but they can be accessed within the class itslef no matter they are private or public or protected
+*/
+
+#include <iostream>
+using namespace std;
+// #define PI 3.14159 //or we can use const double PI {3.14159};
+const double PI {3.14159};
+class Cylinder {
+    public:
+        // this below are called member varibles if no access specifier is mentioned then by default it is private
+        double base_radius{2.4};
+        double height{5.0};
+    public :
+        double volume(){
+            return PI * base_radius  * base_radius * height ;
+        }
+    // other access modifiers include publc, private, protected    
+};
+int main()
+{
+    Cylinder cylinder;
+    cout <<"Vol of Cylinder having " << "Base_Radius : " << cylinder.base_radius << " and Height : " << cylinder.height << " is " <<  cylinder.volume() << endl;
+    
+    //we can also change the member variables data like below
+    Cylinder cylinder1;
+    cylinder1.base_radius = 1;
+    cout << "Enter height of cylinder : ";
+    cin >> cylinder1.height;
+    cout <<"Vol of Cylinder having " << "Base_Radius : " << cylinder1.base_radius << " and Height : " << cylinder1.height << " is " <<  cylinder.volume() << endl;
+    
+}   
+
+
+
+

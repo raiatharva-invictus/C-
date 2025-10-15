@@ -1,20 +1,46 @@
+// Topic : - Destructors
+
+/*
+1 destructors are special methods that are called when an object dies  
+*/
+
 #include <iostream>
+#include "cylinder.h"
 using namespace std;
-// #define PI 3.14159 //or we can use const double PI {3.14159};
-const double PI {3.14159};
-class Cylinder {
+
+class Dog{
     public:
-        double base_radius{2.4};
-        double height{5.0};
-    public :
-        double volume(){
-            return PI * base_radius  * base_radius * height ;
-        }
+        Dog(string_view _name, string_view _breed, int _age);
+        ~Dog();
+    private:
+        string name;
+        string breed;
+        int *age{nullptr};
+
 };
+Dog::Dog(string_view _name, string_view _breed, int _age){
+    name = _name;
+    breed = _breed;
+    age = new int; //dynamic allocation
+    *age = _age;
+    cout << "Constructor is called for " << name << endl;
+}
+Dog::~Dog(){
+    delete age;
+    cout << "Destructor is called for " << name << endl;
+}
+
 int main()
 {
-    Cylinder cylinder;
-    cout <<"Vol of Cylinder having " << "Base_Radius : " << cylinder.base_radius << " and Height : " << cylinder.height << " is " <<  cylinder.volume() << endl;
-}   
+    Dog dog("Jack", "Labrador", 3);
+    cout << "Done ! created the object " << endl;
+    // destructor will be called at the end of the scope of current function it is in(here it is in main) even after the above print statment  by this statement i mean that if the object was created in main function it will only call destructor when it is about to exit the main function scope but if it will exit other function in which it was called then it will call destructor at the end of that function scope( you can see this by taking a function and creating the object in it and try to print done in main you will see that first const. is called then at the end dest. is called out of the function now it will proceed) you get it 
+    return 0;
+}       
+
+
+
+
+
 
 

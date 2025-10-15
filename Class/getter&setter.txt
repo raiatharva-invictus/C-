@@ -1,0 +1,63 @@
+// Topic : - Setters and Getters in c++
+
+/*
+IMP NOTES:
+ 1 Getter and Setter help to access private members of a class that is providing indirect access (getter) and indirect assigning (setter)
+
+*/
+
+#include <iostream>
+using namespace std;
+
+class Cylinder {
+    double radius;
+    double height;
+
+    public :
+        // Setter for radius
+        void setRadius(double r){
+            radius = r;
+        }
+        void setHeight(double h){
+            height = h;
+        }
+        // Getter for radius
+        double getRadius(){
+            return radius;
+        }
+        double getHeight(){
+            return height;
+        }
+
+};
+int main()
+{
+//     int name;
+//     int pin {123};
+    
+//  do {
+//     cout << "Enter your pass " <<endl;
+//     cin >> name;
+//     if(name > 0){
+//         cout<< "Correct pin" << endl;
+//         break;
+//     }else{
+//         cout << "Incorrect pin" << endl;
+//     }
+//  }while(true);
+
+
+    Cylinder c;
+
+    c.setRadius(4);
+    cout << c.getRadius() << endl;
+
+
+}   
+
+
+
+
+
+
+
