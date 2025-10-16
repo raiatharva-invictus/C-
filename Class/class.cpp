@@ -1,7 +1,7 @@
 // Topic : - Destructors
 
 /*
-1 destructors are special methods that are called when an object dies  
+1 destructors are special methods that are called when an object dies  that is their lifetime ends
 */
 
 #include <iostream>
