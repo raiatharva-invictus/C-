@@ -1,0 +1,69 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "Build with GCC 14.2.0",
+			"command": "C:\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-std=c++23",
+				"-g",
+				"${workspaceFolder}//*.cpp",
+				"-o",
+				"${fileDirname}\\rooster.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:\\mingw64\\bin\\g++.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "Build with CLANG 19.1.7",
+			"command": "C:\\mingw64\\bin\\clang++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-std=c++23",
+				"-g",
+				"${workspaceFolder}//*.cpp",
+				"-o",
+				"${fileDirname}\\rooster.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:\\mingw64\\bin\\clang++.exe"
+		},
+		{
+				"label": "Git Push",
+				"type": "shell",
+				"command": "git add . ; git commit -m '${input:message}' ; git push",
+				"problemMatcher": [],
+				
+    	},
+		{
+				"label": "Run Compiled File",
+				"type": "shell",
+				"command": ".\\rooster.exe",
+				"problemMatcher": [],
+				
+    	}
+		
+	],
+	"inputs": [
+		{
+		"id": "message",
+		"type": "promptString",
+		"description": "Enter commit message"
+		}
+	]
+}
