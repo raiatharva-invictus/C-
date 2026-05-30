@@ -1,5 +1,5 @@
 ⭐️ Course Contents ⭐
-(0:00:00) Introduction
+(0:00:00) Introduction to C++
 
 (0:04:32) Chapter 1: Setting up the tools
 Tools
